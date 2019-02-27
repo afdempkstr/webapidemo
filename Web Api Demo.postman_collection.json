@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "6de6e575-0300-439c-8fcc-d295c39fc3f0",
+		"name": "Web Api Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{server}}/api/Books?",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Books"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "test",
+							"value": "mitsos",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Get Books"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Book (Create)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Title",
+							"value": "Professional ASP.NET MVC 5",
+							"type": "text"
+						},
+						{
+							"key": "Author",
+							"value": "Jon Galloway",
+							"type": "text"
+						},
+						{
+							"key": "PublicationYear",
+							"value": "2014",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/api/Books",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Books"
+					]
+				},
+				"description": "Create a new book"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book (Retrieve)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{server}}/api/Books/1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Books",
+						"1"
+					]
+				},
+				"description": "Gets a book by id"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Book (Update)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Title",
+							"value": "Professional ASP.NET MVC 5",
+							"type": "text"
+						},
+						{
+							"key": "Author",
+							"value": "Jon Galloway, Scott Allen",
+							"type": "text"
+						},
+						{
+							"key": "PublicationYear",
+							"value": "2014",
+							"type": "text"
+						},
+						{
+							"key": "Id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/api/Books/1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Books",
+						"1"
+					]
+				},
+				"description": "Create a new book"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Book (Delete)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{server}}/api/Books/1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Books",
+						"1"
+					]
+				},
+				"description": "Gets a book by id"
+			},
+			"response": []
+		}
+	]
+}
