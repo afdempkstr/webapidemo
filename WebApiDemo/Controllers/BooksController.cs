@@ -27,7 +27,19 @@ namespace WebApiDemo.Controllers
         [ResponseType(typeof(Book))]
         public async Task<IHttpActionResult> GetBook(int id)
         {
-            Book book = await db.Books.FindAsync(id);
+            // spawn an asynchronous process
+            Task<Book> findBook = db.Books.FindAsync(id);
+
+            // do other work while waiting for the db to get the book
+            for (int i = 0; i < 100; i++)
+            {
+                i = i + 1;
+            }
+
+            //wait for the asynchronous task to complete before contunuing
+            var book = await findBook;
+
+            //Book book = await db.Books.FindAsync(id);
             if (book == null)
             {
                 return NotFound();
