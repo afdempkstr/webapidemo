@@ -8,19 +8,21 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using WebApiDemo.Models;
 
 namespace WebApiDemo.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class BooksController : ApiController
     {
         private WebApiDemoContext db = new WebApiDemoContext();
 
         // GET: api/Books
-        public IQueryable<Book> GetBooks()
+        public IEnumerable<Book> GetBooks()
         {
-            return db.Books;
+            return db.Books.ToList();
         }
 
         // GET: api/Books/5

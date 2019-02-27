@@ -11,8 +11,9 @@ namespace WebApiDemo
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            var corsAttr = new EnableCorsAttribute("*", "*", "*");
-            config.EnableCors(corsAttr);
+            //var corsAttr = new EnableCorsAttribute("*", "*", "*");
+            //config.EnableCors(corsAttr);
+            config.EnableCors();
 
             // Web API routes
             config.MapHttpAttributeRoutes();
